@@ -225,3 +225,39 @@ details p{margin-top:.5rem;color:var(--mute);font-size:.94rem}
 
 @keyframes up{from{opacity:0;transform:translateY(16px)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1}}
+
+/* ===== ADAPTACIÓN A TABLETS Y CELULARES (agregar al final) ===== */
+html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}
+.g,.split>*{min-width:0}
+.g{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.gal{grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
+input,select,textarea{font-size:16px}
+/* Tablets: el menú se pasa a hamburguesa antes para que nada se apriete */
+@media(max-width:1024px){
+.burger{display:grid}
+.nav{position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 4%;display:none;margin:0}
+.nav.open{display:flex}.nav a{padding:.9rem .85rem}.nav a[aria-current]::after{right:auto;width:40px}
+.acts{margin-left:auto}
+.sec{padding:clamp(3rem,7vw,4.5rem) 0}}
+/* Celulares */
+@media(max-width:700px){
+.g[style]{grid-template-columns:1fr!important}
+.split{gap:1.8rem}.card{padding:1.2rem}
+.stats b{font-size:2rem}.stats div{padding:1.2rem .6rem}}
+@media(max-width:600px){
+.wrap{width:90%}
+h1{font-size:clamp(1.9rem,8.5vw,2.6rem)}
+.hero .wrap{padding:3.5rem 0 3rem}.hero p{font-size:1.05rem}
+.hero .row .btn,.cta .row .btn,form .btn{flex:1 1 100%;justify-content:center}
+.filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:.4rem}.fl{white-space:nowrap}
+.fab{right:.9rem;bottom:.9rem}.fb{width:52px;height:52px}
+.fm2 a,.fm2 button{white-space:normal}
+.panel{left:.9rem;right:.9rem;width:auto;bottom:5.2rem;max-height:65vh}
+.toast{width:90%;bottom:5.5rem}}
+@media(max-width:480px){
+.hdr .wrap{gap:.5rem;min-height:62px}.nav{top:62px}
+.acts{gap:.25rem}.ib{width:38px;height:38px}
+.brand{min-width:0}.brand img{height:30px}.brand span{font-size:.8rem;line-height:1.1;max-width:100px}}
+@media(max-width:360px){.brand img{display:none}}
+/* Pantallas táctiles: sin efectos de elevación al tocar */
+@media(hover:none){.card:hover,.btn:hover,.ib:hover,.fb:hover{transform:none}}
