@@ -261,3 +261,10 @@ h1{font-size:clamp(1.9rem,8.5vw,2.6rem)}
 @media(max-width:360px){.brand img{display:none}}
 /* Pantallas táctiles: sin efectos de elevación al tocar */
 @media(hover:none){.card:hover,.btn:hover,.ib:hover,.fb:hover{transform:none}}
+
+/* Mapa y tarjetas de contacto: se ajustan al ancho de la pantalla */
+.info,.info .card,.info .card>div{min-width:0;max-width:100%}
+.info .card>div{flex:1}
+iframe{display:block;width:100%!important;max-width:100%;border:0;border-radius:var(--r)}
+.info iframe{height:260px!important;margin-top:.8rem}
+.info .card iframe{width:calc(100% + 50px)!important;max-width:none;margin-left:-50px}
